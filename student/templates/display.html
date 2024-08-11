@@ -1,0 +1,44 @@
+{% extends 'main_template.html' %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Rollno</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Address</th>
+                            <th>Phone</th>
+                            <th>Gender</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for student in students %}
+                        <tr>
+                            <td><a href="/view/{{ student.id }}">{{ student.rollno }}</a></td>
+                            <td>{{ student.firstname }}</td>
+                            <td>{{ student.lastname }}</td>
+                            <td>{{ student.address }}</td>
+                            <td>{{ student.phone }}</td>
+                            <td>{{ student.gender }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-end mt-3">
+        <div class="col-md-2">
+            <a href="/create" class="btn btn-primary w-100">Create Student</a>
+        </div>
+    </div>
+{% endblock %}

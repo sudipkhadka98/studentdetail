@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <style>
+        body {
+            background-color:  aquamarine;;
+            margin :0px;
+            padding: 100px;
+            font-style: normal;
+
+        }
+        form {
+            max-width: 600px;
+            margin:auto ;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        form input, form textarea {
+            margin-bottom: 1em;
+            padding: .5em;
+            border: 1px solid #CCC;
+            border-radius: 3px;
+            width: 100%;
+        }
+        form button {
+            padding: 0.7em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+        #button {
+            padding: 0.7em;
+            color: #fff;
+            background-color:red;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body> 
+    <form action = "" method = "post">
+        <a href="/view/{{ student.id }}" class="p-2"></a>
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Update" class="btn btn-primary">
+    </form>
+    <a href="/delete/{{ student_id_number }}" class="btn btn-danger" id="button">Delete</a>
+</body>
+</html>

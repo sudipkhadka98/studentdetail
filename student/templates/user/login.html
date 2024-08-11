@@ -1,0 +1,33 @@
+{% extends 'main_template.html' %}
+
+{% load static %}
+
+{% block title %}
+Sign Up
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card p-4 shadow-sm">
+                <h3 class="card-title mb-4">Login</h3>
+                <form id="main_form" action="" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="d-flex justify-content-end mt-3">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+                <div class="mt-4 text-center">
+                    <p>Already have an account?</p>
+                    <a href="/login/" class="btn btn-secondary">Login</a>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <img src="{% static 'test.jpg' %}" alt="Decorative Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

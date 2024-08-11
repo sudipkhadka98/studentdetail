@@ -1,0 +1,28 @@
+{% extends 'main_template.html' %}
+
+{% block title %}
+Sign Up
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card p-4 shadow-sm">
+                <h3 class="card-title mb-4 text-center">Sign Up</h3>
+                <form id="main_form" action="" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="d-flex justify-content-end mt-3">
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </div>
+                </form>
+                <div class="mt-4 text-center">
+                    <p class="mb-1">Already have an account?</p>
+                    <a href="/login/" class="btn btn-secondary">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
